@@ -9,8 +9,41 @@ app = Flask(__name__)
 if __name__ == '__main__':
    app.run()
 
+# Environment Variable Management
+load_dotenv()
+api_key = os.getenv('SUBGRAPH_API')
+subgraph_endpoint = f'https://gateway.thegraph.com/api/{api_key}/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7'
+
+def update_query(input_number): 
+    query = """
+    {
+    swaps(orderBy: amountInUSD, orderDirection: desc, first: replaceMe) {
+        amountInUSD
+        from
+        to
+        timestamp
+        tokenIn {
+        name
+        }
+        tokenOut {
+        name
+        }
+    }
+    }
+""".replace('replaceMe', input_number)
+    return query
+
 @app.route("/", methods=["GET", "POST"])
 def index():
-    swapInputNumberData = request.form["topSwapNumberInputHTML"]
+    if request.method == "POST":
+        swapInputNumberData = request.form["top_swap_count"]
+        query = update_query(swapInputNumberData)
+        response = requests.post(url=subgraph_endpoint, json={"query": query})
+        formatted_subgraph_json = json.loads(response.content)
+        json_table = json2html.convert(json = formatted_subgraph_json)
+       
+        if response.status_code == 200:
+            return render_template('index.html', json_table = json_table)
 
-    return render_template('index.html')
+    else:
+        return render_template('index.html')

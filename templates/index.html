@@ -7,6 +7,14 @@
 		<title>Top Swaps</title>
 	</head>
 	<body>
-		<h1>Testing our server!</h1>
+		<form method="post">
+			<h1>
+				Want to see the Top Swaps in the history of Uniswap? Enter the
+				number of Top Swaps you want to see!
+			</h1>
+			<p><input type="number" name="top_swap_count" /></p>
+			<p><input type="submit" value="submit" /></p>
+		</form>
+		<div>{{ json_table | safe }}</div>
 	</body>
 </html>
