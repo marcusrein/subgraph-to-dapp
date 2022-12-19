@@ -18,8 +18,8 @@ $ pip install -r requirements.txt
 
 $ flask run
 
-You will need a API Key from www.thegraph.com.
+You will need a API Key from www.thegraph.com for this to run properly.
 
-Create a .env file in the home folder and put that API key into the file as such:
+Create a .env file in the home folder and put your API key into the file formatted as such:
 
 SUBGRAPH_API="[your api key]"
