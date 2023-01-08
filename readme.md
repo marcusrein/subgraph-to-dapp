@@ -21,3 +21,7 @@ $ pip install -r requirements.txt
 
 RUN SERVER
 $ flask run
+
+### Reach out!
+
+www.twitter.com/marcus_rein_
