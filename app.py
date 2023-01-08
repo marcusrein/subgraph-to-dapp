@@ -5,6 +5,7 @@ from gql import Client, gql
 from gql.transport.aiohttp import AIOHTTPTransport
 import os
 
+# Flask app setup
 app = Flask(__name__)
 if __name__ == '__main__':
     app.run()
@@ -15,6 +16,7 @@ api_key = os.getenv('SUBGRAPH_API')
 subgraph_endpoint = f'https://gateway.thegraph.com/api/{api_key}/subgraphs/id/ELUcwgpm14LKPLrBRuVvPvNKHQ9HvwmtKgKSH6123cr7'
 
 
+# GraphQL Setup
 transport = AIOHTTPTransport(
     url=subgraph_endpoint
 )
@@ -44,7 +46,7 @@ def update_subgraph_query(input_number):
             """.replace('replaceMe', input_number))
     return subgraph_gql_query
 
-
+# Front-end Routing
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
