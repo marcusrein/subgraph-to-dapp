@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
-from json2html import *
+from json2html import json2html
 from gql import Client, gql
 from gql.transport.aiohttp import AIOHTTPTransport
 import os
@@ -43,7 +43,6 @@ def update_subgraph_query(input_number):
                 }
             """.replace('replaceMe', input_number))
     return subgraph_gql_query
-
 
 
 @app.route("/", methods=["GET", "POST"])
