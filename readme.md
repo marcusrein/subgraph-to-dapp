@@ -10,7 +10,7 @@ https://youtu.be/UqfMQPU4H20
 
 ### Quickstart this dapp:
 
-CLONE THIS REPO
+CLONE THIS REPO, CD INTO FOLDER
 
 CREATE ENVIRONMENT
 $ python3 -m venv .venv
