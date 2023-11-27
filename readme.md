@@ -26,4 +26,4 @@ $ flask run
 
 ### Reach out!
 
-www.twitter.com/Marcus_Rein_
+[My twitter](www.twitter.com/Marcus_Rein_)
