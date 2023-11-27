@@ -1,8 +1,8 @@
-# Building Your First Dapp with a Subgraph, Python, and Flask (Part 1)
+# Building Your First Dapp with a The Graph, a Subgraph, Python, and Flask 
 
 ## Written Tutorial of this Dapp:
 
-https://docs.google.com/document/d/1d5kkKVMIS-5MK3OlcVHTD1_GRhuTmojRpU2_2MUd5FM/edit?usp=sharing
+https://mirror.xyz/madavre.eth/HfeEq4LZJpBEI1JfHwD-SYeIV_mhVOcuoR4jRzn4-vs
 
 ## Video Tutorial of this Dapp:
 
@@ -26,4 +26,4 @@ $ flask run
 
 ### Reach out!
 
-www.twitter.com/0xMarcusRein
+www.twitter.com/Marcus_Rein_
